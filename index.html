@@ -143,7 +143,7 @@
       width: 80px;
       height: 80px;
       object-fit: cover;
-      border-radius: 50%;
+      border-radius: 12px;
       border: 3px solid #e5e7eb;
     }
     
@@ -164,13 +164,14 @@
      <div class="text-5xl mb-3">
       📋✨
      </div>
-     <h1 id="survey-title" class="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">แบบประเมินความพึงพอใจในการให้บริการ</h1>
-     <p class="text-white/80 mt-2 text-sm sm:text-base">กรุณาให้คะแนนประเมินการบริการของเรา 💜</p>
+     <h1 id="survey-title" class="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">🏥 แบบประเมินความพึงพอใจ</h1>
+     	<p class="text-white/80 mt-2 text-sm sm:text-base">การให้บริการของ นักกายภาพบำบัด พยาบาล </p>
+	<p class="text-white/80 mt-2 text-sm sm:text-base">เวชศาสตร์ฟื้นฟูหัวใจและปอด</p>
     </div><!-- Survey Form -->
     <form id="survey-form" class="space-y-6"><!-- Section 1: Satisfaction Rating -->
      <div class="card-glass rounded-2xl p-5 sm:p-6 shadow-xl fade-in" style="animation-delay: 0.1s">
-      <div class="flex items-center gap-3 mb-5"><span class="text-3xl">⭐</span>
-       <h2 class="text-lg sm:text-xl font-semibold text-gray-800">ส่วนที่ 1: ป  ะเมินความพ  งพอใจ</h2>
+      <div class="flex items-center gap-3 mb-5"><span class="text-3xl">📊</span>
+       <h2 class="text-lg sm:text-xl font-semibold text-gray-800">ประเมินความพึงพอใจ</h2>
       </div><!-- Question 1 -->
       <div class="mb-5"><label class="block text-gray-700 font-medium mb-3 text-sm sm:text-base"> 1.    จ้าหน้าที่มีความรู้ ความสามารถให้บริการอย่างมืออาชีพ 👩‍⚕️ </label>
        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3" data-question="q1"><button type="button" class="rating-btn py-2 px-3 sm:py-3 sm:px-4 rounded-xl bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 font-medium text-xs sm:text-sm" data-value="ดีเยี่ยม">🌟 ดีเยี่ยม</button> <button type="button" class="rating-btn py-2 px-3 sm:py-3 sm:px-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-medium text-xs sm:text-sm" data-value="ดี">👍 ดี</button> <button type="button" class="rating-btn py-2 px-3 sm:py-3 sm:px-4 rounded-xl bg-gradient-to-r from-amber-50 to-yellow-50 text-amber-700 font-medium text-xs sm:text-sm" data-value="พอใช้">😊 พอใช้</button> <button type="button" class="rating-btn py-2 px-3 sm:py-3 sm:px-4 rounded-xl bg-gradient-to-r from-rose-50 to-pink-50 text-rose-700 font-medium text-xs sm:text-sm" data-value="ควรปรับปรุง">📝 ควรปรับปรุง</button>
@@ -192,13 +193,13 @@
       </div>
      </div><!-- Section 2: Staff Selection -->
      <div class="card-glass rounded-2xl p-5 sm:p-6 shadow-xl fade-in" style="animation-delay: 0.2s">
-      <div class="flex items-center gap-3 mb-5"><span class="text-3xl">👨‍⚕️</span>
-       <h2 class="text-lg sm:text-xl font-semibold text-gray-800">ส่วนที่ 2: บุคลากรที่ท่านประทับใจ</h2>
+      <div class="flex items-center gap-3 mb-5"><span class="text-3xl">👥</span>
+       <h2 class="text-lg sm:text-xl font-semibold text-gray-800">บุคลากรที่ท่านประทับใจ</h2>
       </div><!-- Select All Options -->
       <div class="mb-6 space-y-2">
        <div id="select-all-both" class="checkbox-card flex items-center gap-3 p-3 rounded-xl border-2 border-gray-200 hover:border-indigo-300">
         <div class="w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center check-box"><span class="hidden text-white text-xs">✓</span>
-        </div><span class="font-medium text-sm sm:text-base">🏥นักกายภาพบำบัด และพยาบาล ทุกคน</span>
+        </div><span class="font-medium text-sm sm:text-base">🏥 นักกายภาพบำบัด และพยาบาล ทุกคน</span>
        </div>
       </div><!-- Physical Therapists -->
       <div class="mb-6">
@@ -240,7 +241,7 @@
        🎉
       </div>
       <h3 class="text-2xl font-bold text-gray-800 mb-2">ขอบคุณค่ะ!</h3>
-      <p class="text-gray-600 mb-6">บันทึกข้อมูลเรี   บร้อยแล้ว<br>
+      <p class="text-gray-600 mb-6">บันทึกข้อมูลเรียบร้อยแล้ว<br>
        ขอบคุณที่ร่วมประเมินความพึงพอใจ 💜</p><button id="close-modal" class="submit-btn px-8 py-3 rounded-xl text-white font-semibold"> ปิด </button>
      </div>
     </div>
