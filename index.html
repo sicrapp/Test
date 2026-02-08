@@ -8,151 +8,72 @@
   <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
-    body {
-      box-sizing: border-box;
-      font-family: 'Prompt', sans-serif;
-    }
-    
-    .gradient-bg {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    }
-    
-    .card-glass {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .rating-btn {
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-    }
-    
-    .rating-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    
-    .rating-btn.selected {
-      border-color: #667eea;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      transform: scale(1.05);
-    }
-    
-    .staff-card {
-      transition: all 0.3s ease;
-      cursor: pointer;
-      position: relative;
-    }
-    
-    .staff-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-    }
-    
-    .staff-card.selected {
-      border: 3px solid #667eea;
-      box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
-    }
-    
-    .staff-card.selected::after {
-      content: '✓';
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      width: 28px;
-      height: 28px;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 14px;
-      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
-    }
-    
-    .staff-card.disabled {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-    
-    .checkbox-card {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .checkbox-card:hover {
-      background: #f0f4ff;
-    }
-    
-    .checkbox-card.selected {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-    
-    .submit-btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transition: all 0.3s ease;
-    }
-    
-    .submit-btn:hover:not(:disabled) {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-    }
-    
-    .submit-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-    
-    .loading-overlay {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(5px);
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    .animate-spin {
-      animation: spin 1s linear infinite;
-    }
-    
-    .animate-bounce {
-      animation: bounce 0.6s ease-in-out infinite;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .fade-in {
-      animation: fadeIn 0.5s ease-out forwards;
-    }
-    
-    .staff-img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 3px solid #e5e7eb;
-    }
-    
-    @media (min-width: 640px) {
-      .staff-img {
-        width: 100px;
-        height: 100px;
-      }
-    }
+/* ===== UNIFIED STAFF CARD ===== */
+
+.staff-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 16px 12px 14px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0,0,0,.12);
+}
+
+.staff-img-wrapper {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+  transition: all .25s ease;
+}
+
+.staff-card:hover .staff-img-wrapper {
+  border-color: #6366f1;
+}
+
+.staff-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.staff-name {
+  background: #c7e5e2;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* selected */
+.staff-card.selected {
+  box-shadow: 0 0 0 3px rgba(99,102,241,.35);
+}
+
+.staff-card.selected .staff-img-wrapper {
+  border-color: #6366f1;
+  background: rgba(99,102,241,.08);
+}
+
+/* responsive */
+@media (min-width: 640px) {
+  .staff-img {
+    width: 96px;
+    height: 96px;
+  }
+}
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
