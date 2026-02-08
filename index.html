@@ -140,31 +140,13 @@
     }
     
     .staff-img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 10px;   /* มุมรูป */
-  display: block;        /* กันช่องว่างใต้ img */
-}
-    /* กรอบนอกของรูป */
-.staff-img-wrapper {
-  display: inline-flex;      /* ขนาดพอดีกับรูป */
-  padding: 4px;              /* ระยะกรอบ */
-  border-radius: 14px;       /* มุมกรอบ */
-  border: 2px solid #e5e7eb; /* สีกรอบ */
-  transition: all 0.3s ease;
-}
-
-/* ตอน hover */
-.staff-card:hover .staff-img-wrapper {
-  border-color: #667eea;
-}
-
-/* ตอนเลือก */
-.staff-card.selected .staff-img-wrapper {
-  border-color: #667eea;
-  background: rgba(102, 126, 234, 0.08);
-}
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #e5e7eb;
+    }
+    
     @media (min-width: 640px) {
       .staff-img {
         width: 100px;
@@ -314,24 +296,15 @@
       
       ptGrid.innerHTML = physicalTherapists.map(pt => `
         <div class="staff-card bg-white rounded-2xl p-3 sm:p-4 text-center shadow-md ${state.selectedPTs.includes(pt.id) ? 'selected' : ''} ${state.selectAllBoth || state.selectAllPT ? 'disabled' : ''}" data-id="${pt.id}" data-type="pt">
-          <div class="staff-img-wrapper mx-auto mb-2">
-  <img src="${pt.image}"
-       alt="${pt.name}"
-       class="staff-img"
-       loading="lazy">
-</div>
+          <img src="${pt.image}" alt="${pt.name}" class="staff-img mx-auto mb-2" loading="lazy" onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.alt='${pt.name}';">
           <p class="font-medium text-gray-700 text-xs sm:text-sm truncate">${pt.name}</p>
         </div>
       `).join('');
+      
       nurseGrid.innerHTML = nurses.map(nurse => `
         <div class="staff-card bg-white rounded-2xl p-3 sm:p-4 text-center shadow-md ${state.selectedNurses.includes(nurse.id) ? 'selected' : ''} ${state.selectAllBoth || state.selectAllNurse ? 'disabled' : ''}" data-id="${nurse.id}" data-type="nurse">
-         <div class="staff-img-wrapper mx-auto mb-2">
-  <img src="${nurse.image}"
-       alt="${nures.name}"
-       class="staff-img"
-       loading="lazy">
-</div>
-           <p class="font-medium text-gray-700 text-xs sm:text-sm truncate">${nurse.name}</p>
+          <img src="${nurse.image}" alt="${nurse.name}" class="staff-img mx-auto mb-2" loading="lazy" onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'; this.alt='${nurse.name}';">
+          <p class="font-medium text-gray-700 text-xs sm:text-sm truncate">${nurse.name}</p>
         </div>
       `).join('');
     }
